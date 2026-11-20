@@ -16,6 +16,14 @@ interface ProductImageProps extends Omit<ComponentProps<'img'>, 'src'> {
  * - decodificação assíncrona (não trava a rolagem)
  * - fallback automático para uma silhueta se o arquivo não existir
  */
+/**
+ * Caminhos começando com "/" recebem o prefixo do site (BASE_URL).
+ * No GitHub Pages o site fica em /gilmar-afonso-store/, então
+ * "/images/x.jpeg" precisa virar "/gilmar-afonso-store/images/x.jpeg".
+ */
+const withBase = (src: string) =>
+  src.startsWith('/') ? `${import.meta.env.BASE_URL}${src.slice(1)}` : src
+
 export function ProductImage({
   src,
   alt,
@@ -28,7 +36,7 @@ export function ProductImage({
   const [failed, setFailed] = useState(false)
   return (
     <img
-      src={failed ? productPlaceholder(fallbackColor) : src}
+      src={failed ? productPlaceholder(fallbackColor) : withBase(src)}
       alt={alt}
       loading={loading}
       decoding="async"

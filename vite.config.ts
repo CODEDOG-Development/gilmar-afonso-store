@@ -5,6 +5,9 @@ import { defineConfig } from 'vite'
 
 // https://vite.dev/config/
 export default defineConfig({
+  // Caminho onde o site fica publicado. "/" para domínio próprio;
+  // "/gilmar-afonso-store/" no GitHub Pages (o workflow define BASE_PATH).
+  base: process.env.BASE_PATH ?? '/',
   plugins: [react(), tailwindcss()],
   resolve: {
     // "@/" aponta para "src/" — evita imports como "../../../components"

@@ -73,5 +73,8 @@ const routes: RouteObject[] = [
  * "browser" gera URLs limpas (/produto/polo-classica-bordo) — padrão para produção.
  * "hash" (/#/produto/...) serve só para hospedagens sem reescrita de rotas.
  */
+/** "/gilmar-afonso-store/" → "/gilmar-afonso-store" (o React Router não quer a barra final). */
+const basename = import.meta.env.BASE_URL.replace(/\/$/, '') || '/'
+
 export const router =
-  env.routerMode === 'hash' ? createHashRouter(routes) : createBrowserRouter(routes)
+  env.routerMode === 'hash' ? createHashRouter(routes) : createBrowserRouter(routes, { basename })

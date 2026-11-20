@@ -16,7 +16,9 @@ export function RouteError() {
       <p className="text-sm text-muted-foreground">
         Tente recarregar. Se continuar, fale com a gente.
       </p>
-      <Button onClick={() => window.location.assign('/')}>VOLTAR AO INÍCIO</Button>
+      <Button onClick={() => window.location.assign(import.meta.env.BASE_URL)}>
+        VOLTAR AO INÍCIO
+      </Button>
     </div>
   )
 }

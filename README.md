@@ -86,6 +86,7 @@ src/
 `npm run build` gera a pasta `dist/`. Envie o **conteúdo** dela para a hospedagem.
 
 - **Apache/FTP (cPanel, Hostinger...):** o `.htaccess` já vai junto e faz as rotas funcionarem.
+- **GitHub Pages (demonstração):** o workflow `.github/workflows/deploy.yml` publica a cada push na `main`. Requer repositório público (no plano gratuito) e _Settings → Pages → Source: GitHub Actions_. Endereço: `https://<usuario>.github.io/gilmar-afonso-store/`.
 - **Netlify:** `public/_redirects` já está pronto. **Vercel:** `vercel.json` já está pronto.
 
 ## Próximas fases
