@@ -1,0 +1,14 @@
+Coloque aqui as fotos dos produtos com estes nomes (as 8 primeiras são as do projeto original):
+
+polo-bordo.jpeg            camiseta-cinza.jpeg
+polo-preta.jpeg            camiseta-preta.jpeg
+polo-branca.jpeg           camiseta-verde-militar.jpeg
+camisa-social-branca.jpeg  camisa-social-preta.jpeg
+
+Produtos novos (opcional — até lá aparece uma silhueta na cor do produto):
+moletom-careca-preto.jpeg, moletom-canguru-cinza.jpeg, moletom-ziper-verde.jpeg,
+camiseta-off-white.jpeg, camiseta-areia.jpeg, polo-azul-marinho.jpeg,
+camisa-social-azul.jpeg, camisa-oxford-branca.jpeg
+
+Fotos extras da galeria: polo-bordo-costas.jpeg, camisa-social-branca-detalhe.jpeg
+Os nomes ficam em src/services/mock/data/catalog.ts.
