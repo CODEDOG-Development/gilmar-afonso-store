@@ -1,0 +1,97 @@
+@import 'tailwindcss';
+@import 'tw-animate-css';
+
+/*
+  Identidade visual da Gilmar Afonso preservada do projeto original (styles.css).
+  As variáveis seguem o padrão do shadcn/ui (background, foreground, primary...),
+  então os componentes de src/components/ui herdam as cores da marca automaticamente.
+*/
+:root {
+  --background: #ffffff;
+  --foreground: #171715; /* --color-text original */
+  --soft: #f5f4f0; /* fundo das seções claras */
+  --image: #eeede8; /* fundo atrás das fotos */
+  --muted: #f0efeb;
+  /* Original #77756f. Escurecido para passar no contraste WCAG AA também sobre #f5f4f0 */
+  --muted-foreground: #66645d;
+  --border: #e8e6e0;
+  --input: #dedcd4;
+  --ring: #77736a;
+  --primary: #171715; /* botão "btn-gold" do original é preto */
+  --primary-foreground: #ffffff;
+  --primary-hover: #393832;
+  --accent: #b49a68; /* dourado da marca */
+  --accent-foreground: #8d7549;
+  --destructive: #b42318;
+  --success: #2f6b3f;
+  --radius: 2px;
+}
+
+@theme inline {
+  --font-sans: 'DM Sans', Arial, sans-serif;
+  --font-display: 'Playfair Display', Georgia, serif;
+
+  --color-background: var(--background);
+  --color-foreground: var(--foreground);
+  --color-soft: var(--soft);
+  --color-image: var(--image);
+  --color-muted: var(--muted);
+  --color-muted-foreground: var(--muted-foreground);
+  --color-border: var(--border);
+  --color-input: var(--input);
+  --color-ring: var(--ring);
+  --color-primary: var(--primary);
+  --color-primary-foreground: var(--primary-foreground);
+  --color-primary-hover: var(--primary-hover);
+  --color-accent: var(--accent);
+  --color-accent-foreground: var(--accent-foreground);
+  --color-destructive: var(--destructive);
+  --color-success: var(--success);
+
+  --radius-sm: var(--radius);
+  --radius-md: 4px;
+  --radius-lg: 6px;
+
+  --tracking-eyebrow: 0.25em;
+}
+
+@layer base {
+  * {
+    @apply border-border;
+  }
+  html {
+    scroll-behavior: smooth;
+    scroll-padding-top: 90px;
+  }
+  body {
+    @apply bg-background font-sans text-sm text-foreground antialiased;
+  }
+  button {
+    cursor: pointer;
+  }
+  /* Foco visível para navegação por teclado (WCAG 2.4.7) */
+  :focus-visible {
+    @apply outline-2 outline-offset-2 outline-foreground;
+  }
+  @media (prefers-reduced-motion: reduce) {
+    html {
+      scroll-behavior: auto;
+    }
+    *,
+    *::before,
+    *::after {
+      animation-duration: 0.01ms !important;
+      transition-duration: 0.01ms !important;
+    }
+  }
+}
+
+@layer components {
+  /* "Eyebrow": o texto pequeno em caixa alta acima dos títulos */
+  .eyebrow {
+    @apply mb-3 text-[11px] leading-relaxed font-medium tracking-eyebrow text-muted-foreground uppercase;
+  }
+  .container-store {
+    @apply mx-auto w-full max-w-[1440px] px-[4.8%];
+  }
+}
