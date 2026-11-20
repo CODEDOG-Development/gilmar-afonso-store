@@ -1,5 +1,0 @@
-User-agent: *
-Allow: /
-Disallow: /checkout
-Disallow: /conta
-Sitemap: https://www.gilmarafonso.com.br/sitemap.xml
